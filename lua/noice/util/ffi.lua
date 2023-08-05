@@ -32,9 +32,9 @@ end
 return setmetatable(M, {
   __index = function(_, key)
     -- HACK: cmdpreview symbol is not available on Windows
-    if key == "cmdpreview" and jit.os == "Windows" then
-      return false
-    end
+    -- if key == "cmdpreview" and jit.os == "Windows" then
+    --   return false
+    -- end
     return M.load()[key]
   end,
   __newindex = function(_, k, v)
